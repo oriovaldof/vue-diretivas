@@ -4,6 +4,7 @@
     Minha primeira diretiva customizada
   </p>
   <p v-texto="configuracaoTexto">Teste</p>
+  <div v-posicao:absolute="100" v-texto="{cor:'green', totalCaracteres: 100}"> Olá, eu sou um binding de argumento e valor</div>
 </template>
 
 <script>
