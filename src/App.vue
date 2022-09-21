@@ -8,11 +8,21 @@
   <span>Código A:</span> <input type="text"><span v-informacao:simples.umClickMouse="'Você encontrará o codigo A na parte frontal do equipamento'">i</span>
   <br>
   <span>Código B:</span> <input type="text"><span v-informacao:destacado.doisClicksMouse.sairAutomaticamente="'Você encontrará o codigo B na parte traseira do equipamento, abaixo da tampa de proteção'">i</span>
+  <hr>
+  <h1 v-colorir="'red'">Diretiva customizada registrada localmente (no componente)</h1>
 </template>
 
 <script>
 export default {
   name: "App",
+  directives:{
+    colorir:{
+      created:function(el, binding) {
+        // console.log(el, binding)
+        el.style.background = binding.value;
+      },
+    }
+  },
   data: () => ({
     configuracaoTexto: {
       cor: "blue",
